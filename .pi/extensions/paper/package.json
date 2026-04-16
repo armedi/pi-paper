@@ -1,0 +1,29 @@
+{
+  "name": "pi-mono-end-turn",
+  "version": "1.6.0",
+  "description": "Pi extension for ending the agent's turn",
+  "keywords": [
+    "pi-package",
+    "pi-extension"
+  ],
+  "peerDependencies": {
+    "@mariozechner/pi-ai": "*",
+    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-tui": "*",
+    "@sinclair/typebox": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emanuelcasco/pi-mono-extensions.git",
+    "directory": "extensions/ask-user-question"
+  },
+  "bugs": {
+    "url": "https://github.com/emanuelcasco/pi-mono-extensions/issues"
+  },
+  "homepage": "https://github.com/emanuelcasco/pi-mono-extensions#readme"
+}
