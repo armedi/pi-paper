@@ -24,7 +24,7 @@ Individual skills may require additional context. Check the skill's preparation 
 
 **Gathering order:**
 1. **Check current instructions (instant)**: If your loaded instructions already contain a **Design Context** section, proceed immediately.
-2. **Check Impeccable text node (fast)**: If not in instructions, read `Impeccable` text node that sits directly under the root node. If it exists and contains the required context, proceed.
+2. **Check Impeccable artboard (fast)**: If not in instructions, read text in `Impeccable` artboard. If it exists and contains the required context, proceed.
 3. **Run impeccable teach (REQUIRED)**: If neither source has context, you MUST run /impeccable teach NOW before doing anything else. Do NOT skip this step. Do NOT attempt to infer context from the document instead.
 
 ---
@@ -280,7 +280,7 @@ If this skill is invoked with the argument "teach" (e.g., `/impeccable teach`), 
 
 ### Step 1: Explore the Paper Document
 
-Before asking questions, thoroughly scan the document to discover what you can:
+Before asking questions, thoroughly review the document, get_screenshot of all artboards, and inspect those screenshots to discover what you can:
 
 - **Existing components**: Current design patterns, spacing, typography in use
 - **Brand assets**: Logos, favicons, color values already defined
@@ -334,7 +334,7 @@ Synthesize your findings and the user's answers into a `## Design Context` secti
 [3-5 principles derived from the conversation that should guide all design decisions]
 ```
 
-Write this section to `Impeccable` text node directly under the root node. If the node already exists, update the Design Context section in place.
+Write this section to `Impeccable` artboard. If the artboard already exists, update the Design Context section in place.
 
 Then ask the user directly to clarify what you cannot infer.
 
