@@ -10,7 +10,7 @@ Assess and improve layout and spacing that feels monotonous, crowded, or structu
 
 ## MANDATORY PREPARATION
 
-Invoke /impeccable — it contains design principles and anti-patterns.
+Invoke /impeccable — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no design context exists yet, you MUST run /impeccable teach first.
 
 ---
 

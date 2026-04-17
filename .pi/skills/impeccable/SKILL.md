@@ -1,13 +1,13 @@
 ---
 name: impeccable
-description: Create distinctive, production-grade interfaces with high design quality in Paper. Generates creative, polished design work that avoids generic AI aesthetics. Use when the user asks to build or reshape pages, artifacts, posters, surfaces, or application UI, or when any design skill requires project context. Call with 'craft' for shape-then-build or 'extract' to pull reusable components and tokens into the design system.
+description: Create distinctive, production-grade interfaces with high design quality. Generates creative, polished design that avoids generic AI aesthetics. Use when the user asks to build web components, pages, artifacts, posters, or application UI, or when any design skill requires project context. Call with 'craft' for shape-then-build, 'teach' for design context setup.
 version: 2.1.1
 user-invocable: true
-argument-hint: "[craft|extract]"
+argument-hint: "[craft|teach]"
 license: Apache 2.0. Based on Anthropic's frontend-design skill. See NOTICE.md for attribution.
 ---
 
-This skill guides creation of distinctive, production-grade interfaces in Paper that avoid generic "AI slop" aesthetics. Implement real working design changes with exceptional attention to aesthetic details and creative choices.
+This skill guides creation of distinctive, production-grade interfaces that avoid generic "AI slop" aesthetics. Implement real working design with exceptional attention to aesthetic details and creative choices.
 
 ## Context Gathering Protocol
 
@@ -20,7 +20,12 @@ Design skills produce generic output without project context. You MUST have conf
 
 Individual skills may require additional context. Check the skill's preparation section for specifics.
 
-**CRITICAL**: You cannot infer this context just by inspecting the Paper document or any exported code. Existing artifacts tell you what was made, not who it's for or what it should feel like. Only the creator can provide that context.
+**CRITICAL**: You cannot infer this context by inspecting the artboards. Existing artifacts tells you what was built, not who it's for or what it should feel like. Only the creator can provide this context.
+
+**Gathering order:**
+1. **Check current instructions (instant)**: If your loaded instructions already contain a **Design Context** section, proceed immediately.
+2. **Check Impeccable text node (fast)**: If not in instructions, read `Impeccable` text node that sits directly under the root node. If it exists and contains the required context, proceed.
+3. **Run impeccable teach (REQUIRED)**: If neither source has context, you MUST run /impeccable teach NOW before doing anything else. Do NOT skip this step. Do NOT attempt to infer context from the document instead.
 
 ---
 
@@ -34,7 +39,7 @@ Commit to a BOLD aesthetic direction:
 
 **CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work. The key is intentionality, not intensity.
 
-Then implement working design work that is:
+Then implement design that is:
 - Production-grade and functional
 - Visually striking and memorable
 - Cohesive with a clear aesthetic point-of-view
@@ -269,6 +274,68 @@ If this skill is invoked with the argument "craft" (e.g., `/impeccable craft [fe
 
 ---
 
-## Extract Mode
+## Teach Mode
 
-If this skill is invoked with the argument "extract" (e.g., `/impeccable extract [target]`), follow the [extract flow](reference/extract.md). Pass any additional arguments as the extraction target.
+If this skill is invoked with the argument "teach" (e.g., `/impeccable teach`), skip all design work above and instead run the teach flow below. This is a one-time setup that gathers design context for the project.
+
+### Step 1: Explore the Paper Document
+
+Before asking questions, thoroughly scan the document to discover what you can:
+
+- **Existing components**: Current design patterns, spacing, typography in use
+- **Brand assets**: Logos, favicons, color values already defined
+- **Design tokens / CSS variables**: Existing color palettes, font stacks, spacing scales
+- **Any style guides or brand documentation**
+
+Note what you've learned and what remains unclear.
+
+### Step 2: Ask UX-Focused Questions
+
+ask the user directly to clarify what you cannot infer. Focus only on what you couldn't infer from the document:
+
+#### Users & Purpose
+- Who uses this? What's their context when using it?
+- What job are they trying to get done?
+- What emotions should the interface evoke? (confidence, delight, calm, urgency, etc.)
+
+#### Brand & Personality
+- How would you describe the brand personality in 3 words?
+- Any reference sites or apps that capture the right feel? What specifically about them?
+- What should this explicitly NOT look like? Any anti-references?
+
+#### Aesthetic Preferences
+- Any strong preferences for visual direction? (minimal, bold, elegant, playful, technical, organic, etc.)
+- Light mode, dark mode, or both?
+- Any colors that must be used or avoided?
+
+#### Accessibility & Inclusion
+- Specific accessibility requirements? (WCAG level, known user needs)
+- Considerations for reduced motion, color blindness, or other accommodations?
+
+Skip questions where the answer is already clear from the document exploration.
+
+### Step 3: Write Design Context
+
+Synthesize your findings and the user's answers into a `## Design Context` section:
+
+```markdown
+## Design Context
+
+### Users
+[Who they are, their context, the job to be done]
+
+### Brand Personality
+[Voice, tone, 3-word personality, emotional goals]
+
+### Aesthetic Direction
+[Visual tone, references, anti-references, theme]
+
+### Design Principles
+[3-5 principles derived from the conversation that should guide all design decisions]
+```
+
+Write this section to `Impeccable` text node directly under the root node. If the node already exists, update the Design Context section in place.
+
+Then ask the user directly to clarify what you cannot infer.
+
+Confirm completion and summarize the key design principles that will now guide all future work.

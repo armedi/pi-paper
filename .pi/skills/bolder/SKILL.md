@@ -10,7 +10,7 @@ Increase visual impact and personality in designs that are too safe, generic, or
 
 ## MANDATORY PREPARATION
 
-Invoke /impeccable — it contains design principles and anti-patterns.
+Invoke /impeccable — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no design context exists yet, you MUST run /impeccable teach first.
 
 ---
 
@@ -32,7 +32,7 @@ Analyze what makes the design feel too safe or boring:
    - Who's the audience? (What will resonate?)
    - What are the constraints? (Brand guidelines, accessibility, performance)
 
-If any of these are unclear from the current Paper document, selection, or prompt, ask the user directly to clarify what you cannot infer.
+If any of these are unclear from the Paper document, ask the user directly to clarify what you cannot infer.
 
 **CRITICAL**: "Bolder" doesn't mean chaotic or garish. It means distinctive, memorable, and confident. Think intentional drama, not random chaos.
 

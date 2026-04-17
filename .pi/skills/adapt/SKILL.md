@@ -10,7 +10,7 @@ Adapt existing designs to work effectively across different contexts - different
 
 ## MANDATORY PREPARATION
 
-Invoke /impeccable — it contains design principles and anti-patterns. Additionally gather: target platforms/devices and usage contexts.
+Invoke /impeccable — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no design context exists yet, you MUST run /impeccable teach first. Additionally gather: target platforms/devices and usage contexts.
 
 ---
 
@@ -172,8 +172,6 @@ Choose appropriate breakpoints:
 - Bottom nav bar for mobile apps
 - Persistent side navigation on desktop
 - Breadcrumbs on smaller screens for context
-
-**IMPORTANT**: Test on real devices when implementation exists, not just emulation. In Paper, verify the adaptation on the relevant artboard sizes first.
 
 **NEVER**:
 - Hide core functionality on mobile (if it matters, make it work)

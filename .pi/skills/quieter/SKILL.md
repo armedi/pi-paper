@@ -10,7 +10,7 @@ Reduce visual intensity in designs that are too bold, aggressive, or overstimula
 
 ## MANDATORY PREPARATION
 
-Invoke /impeccable — it contains design principles and anti-patterns.
+Invoke /impeccable — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no design context exists yet, you MUST run /impeccable teach first.
 
 ---
 
@@ -32,7 +32,7 @@ Analyze what makes the design feel too intense:
    - What's working? (Don't throw away good ideas)
    - What's the core message? (Preserve what matters)
 
-If any of these are unclear from the current Paper document, selection, or prompt, ask the user directly to clarify what you cannot infer.
+If any of these are unclear from the Paper document, ask the user directly to clarify what you cannot infer.
 
 **CRITICAL**: "Quieter" doesn't mean boring or generic. It means refined, sophisticated, and easier on the eyes. Think luxury, not laziness.
 

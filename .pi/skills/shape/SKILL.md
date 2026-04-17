@@ -1,6 +1,6 @@
 ---
 name: shape
-description: Plan the UX and UI for a feature before writing code. Runs a structured discovery interview, then produces a design brief that guides implementation. Use during the planning phase to establish design direction, constraints, and strategy before any code is written.
+description: Plan the UX and UI for a feature before drawing design. Runs a structured discovery interview, then produces a design brief that guides implementation. Use during the planning phase to establish design direction, constraints, and strategy before any design is drawn.
 version: 2.1.1
 user-invocable: true
 argument-hint: "[feature to shape]"
@@ -8,13 +8,13 @@ argument-hint: "[feature to shape]"
 
 ## MANDATORY PREPARATION
 
-Invoke /impeccable — it contains design principles and anti-patterns.
+Invoke /impeccable, which contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding. If no design context exists yet, you MUST run /impeccable teach first.
 
 ---
 
-Shape the UX and UI for a feature before any code is written. This skill produces a **design brief**: a structured artifact that guides implementation through discovery, not guesswork.
+Shape the UX and UI for a feature before any design is drawn. This skill produces a **design brief**: a structured artifact that guides implementation through discovery, not guesswork.
 
-**Scope**: Design planning only. This skill does NOT write code. It produces the thinking that makes code good.
+**Scope**: Design planning only. This skill does NOT draw design. It produces the thinking that makes design good.
 
 **Output**: A design brief that can be handed off to /impeccable craft, /impeccable, or any other implementation skill.
 
@@ -24,7 +24,7 @@ Most AI-generated UIs fail not because of bad code, but because of skipped think
 
 ## Phase 1: Discovery Interview
 
-**Do NOT write any code or make any design decisions during this phase.** Your only job is to understand the feature deeply enough to make excellent design decisions later.
+**Do NOT draw any design or make any design decisions during this phase.** Your only job is to understand the feature deeply enough to make excellent design decisions later.
 
 Ask these questions in conversation, adapting based on answers. Don't dump them all at once; have a natural dialogue. ask the user directly to clarify what you cannot infer.
 
@@ -69,7 +69,7 @@ What this is, who it's for, what it needs to accomplish.
 The single most important thing a user should do or understand here.
 
 **3. Design Direction**
-How this should feel. What aesthetic approach fits.
+How this should feel. What aesthetic approach fits. Reference the project's design context from `Impeccable` text node and explain how this feature should express it.
 
 **4. Layout Strategy**
 High-level spatial approach: what gets emphasis, what's secondary, how information flows. Describe the visual hierarchy and rhythm, not specific CSS.

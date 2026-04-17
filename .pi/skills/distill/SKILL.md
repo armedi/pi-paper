@@ -10,7 +10,7 @@ Remove unnecessary complexity from designs, revealing the essential elements and
 
 ## MANDATORY PREPARATION
 
-Invoke /impeccable — it contains design principles and anti-patterns.
+Invoke /impeccable — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no design context exists yet, you MUST run /impeccable teach first.
 
 ---
 
@@ -32,7 +32,7 @@ Analyze what makes the design feel complex or cluttered:
    - What can be removed, hidden, or combined?
    - What's the 20% that delivers 80% of value?
 
-If any of these are unclear from the current Paper document, selection, or prompt, ask the user directly to clarify what you cannot infer.
+If any of these are unclear from the Paper document, ask the user directly to clarify what you cannot infer.
 
 **CRITICAL**: Simplicity is not about removing features - it's about removing obstacles between users and their goals. Every element should justify its existence.
 
@@ -92,7 +92,6 @@ Systematically remove complexity across these dimensions:
 - **Remove unused layers**: Delete or hide decorative nodes, duplicate groups, or abandoned branches that add noise
 - **Flatten hierarchy**: Reduce unnecessary nesting in frames and groups
 - **Consolidate styles**: Reuse existing visual patterns where appropriate instead of creating near-duplicates
-- **Reduce variants**: Does that section need 12 visual variants, or can 3 cover 90% of the need?
 
 **NEVER**:
 - Remove necessary functionality (simplicity ≠ feature-less)

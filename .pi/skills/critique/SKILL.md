@@ -10,19 +10,18 @@ argument-hint: "[area (feature, page, component...)]"
 
 ### Step 1: Preparation
 
-Invoke /impeccable — it contains design principles and anti-patterns. Additionally gather: what the interface is trying to accomplish.
+Invoke /impeccable, which contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding. If no design context exists yet, you MUST run /impeccable teach first. Additionally gather: what the interface is trying to accomplish.
 
 ### Step 2: Gather Assessments
 
 Launch two independent assessments. **Neither must see the other's output** to avoid bias.
 
-If independent sub-agents are available in the current environment, you may delegate each assessment for extra separation. Otherwise complete the two passes sequentially, keeping their findings separate until synthesis.
+Complete each assessment sequentially, writing findings to internal notes before proceeding.
 
-This repository is Paper-first. Prefer Paper-native review: inspect the relevant artboard or selection, use screenshots for visual judgment, and use exact Paper-export values only when precision is needed.
-
-#### Assessment A: LLM Design Review
+#### Assessment: LLM Design Review
 
 Inspect the relevant Paper artboard, selection, screenshots, and any exported values if needed.
+
 Think like a design director. Evaluate:
 
 **AI Slop Detection (CRITICAL)**: Does this look like every other AI-generated interface? Review against ALL **DON'T** guidelines in the impeccable skill. Check for AI color palette, gradient text, dark glows, glassmorphism, hero metric layouts, identical card grids, generic fonts, and all other tells. **The test**: If someone said "AI made this," would you believe them immediately?
@@ -43,21 +42,6 @@ Think like a design director. Evaluate:
 Score each of the 10 heuristics 0-4. This scoring will be presented in the report.
 
 Return structured findings covering: AI slop verdict, heuristic scores, cognitive load assessment, what's working (2-3 items), priority issues (3-5 with what/why/fix), minor observations, and provocative questions.
-
-#### Assessment B: Automated Detection
-
-Run a deterministic second pass using checklist thinking rather than vibe alone. Re-check the target against the heuristics, cognitive-load checklist, anti-patterns from `/impeccable`, and the mandatory Paper review checkpoints from `SYSTEM.md`:
-
-- Spacing
-- Typography
-- Contrast
-- Alignment
-- Clipping
-- Repetition
-
-Where precision matters, use exact values from Paper exports or computed styles rather than screenshots alone.
-
-Return: checklist findings, repeated-pattern findings, and any false positives or uncertain calls noted clearly.
 
 ### Step 3: Generate Combined Critique Report
 
@@ -93,8 +77,6 @@ Be honest with scores. A 4 means genuinely excellent. Most real interfaces score
 **LLM assessment**: Your own evaluation of AI slop tells. Cover overall aesthetic feel, layout sameness, generic composition, missed opportunities for personality.
 
 **Deterministic scan**: Summarize what the automated detector found, with counts and file locations. Note any additional issues the detector caught that you missed, and flag any false positives.
-
-**Second-pass findings**: Summarize what the deterministic checklist confirmed, what it added beyond the first pass, and any uncertainties.
 
 #### Overall Impression
 A brief gut reaction: what works, what doesn't, and the single biggest opportunity.

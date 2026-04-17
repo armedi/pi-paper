@@ -10,7 +10,7 @@ Strategically introduce color to designs that are too monochromatic, gray, or la
 
 ## MANDATORY PREPARATION
 
-Invoke /impeccable — it contains design principles and anti-patterns. Additionally gather: existing brand colors.
+Invoke /impeccable — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no design context exists yet, you MUST run /impeccable teach first. Additionally gather: existing brand colors.
 
 ---
 
@@ -32,7 +32,7 @@ Analyze the current state and identify opportunities:
    - **Wayfinding**: Helping users navigate and understand structure
    - **Delight**: Moments of visual interest and personality
 
-If any of these are unclear from the current Paper document, selection, or prompt, ask the user directly to clarify what you cannot infer.
+If any of these are unclear from the Paper document, ask the user directly to clarify what you cannot infer.
 
 **CRITICAL**: More color ≠ better. Strategic color beats rainbow vomit every time. Every color should have a purpose.
 
@@ -107,7 +107,7 @@ Ensure color addition improves rather than overwhelms:
 - **Dominant color** (60%): Primary brand color or most used accent
 - **Secondary color** (30%): Supporting color for variety
 - **Accent color** (10%): High contrast for key moments
-- **Neutrals** (remaining): Warmed or cooled off-whites, near-blacks, and muted mid-tones for structure — avoid pure black, pure white, and flat gray
+- **Neutrals** (remaining): Warmed or cooled off-whites, near-blacks, and muted mid-tones for structure
 
 ### Accessibility
 - **Contrast ratios**: Ensure WCAG compliance (4.5:1 for text, 3:1 for UI components)

@@ -10,7 +10,7 @@ Assess and improve typography that feels generic, inconsistent, or poorly struct
 
 ## MANDATORY PREPARATION
 
-Invoke /impeccable — it contains design principles and anti-patterns.
+Invoke /impeccable — it contains design principles, anti-patterns, and the **Context Gathering Protocol**. Follow the protocol before proceeding — if no design context exists yet, you MUST run /impeccable teach first.
 
 ---
 
@@ -47,9 +47,7 @@ Analyze what's weak or generic about the current type:
 
 ## Plan Typography Improvements
 
-Consult the [typography reference](reference/typography.md) from the impeccable skill for detailed guidance on scales, pairing, and hierarchy.
-
-Because this repository works in Paper, inspect the document typography before styling: start from `get_basic_info`, call `get_font_family_info` before the first typographic styling in the session, and prefer fonts already loaded in the document unless the user asks otherwise.
+Consult the [typography reference](reference/typography.md) from the impeccable skill for detailed guidance on scales, pairing, and loading strategies.
 
 Create a systematic plan:
 
@@ -65,7 +63,7 @@ Create a systematic plan:
 If fonts need replacing:
 - Choose fonts that reflect the brand personality
 - Pair with genuine contrast (serif + sans, geometric + humanist) — or use a single family in multiple weights
-- Ensure the chosen family and weights are actually available in Paper before styling
+- Ensure web font loading doesn't cause layout shift (`font-display: swap`, metric-matched fallbacks)
 
 ### Establish Hierarchy
 
@@ -73,20 +71,20 @@ Build a clear type scale:
 - **5 sizes cover most needs**: caption, secondary, body, subheading, heading
 - **Use a consistent ratio** between levels (1.25, 1.333, or 1.5)
 - **Combine dimensions**: Size + weight + color + space for strong hierarchy — don't rely on size alone
-- **App UIs**: Use a fixed `px`-based type scale in Paper, optionally adjusted at 1-2 breakpoints in exported code if needed
-- **Marketing / content pages**: In Paper, define clear fixed `px` sizes for headings and display text. If the user later asks for code export, those values can be translated into fluid behavior where appropriate
+- **App UIs**: Use a fixed `rem`-based type scale, optionally adjusted at 1-2 breakpoints. Fluid sizing undermines the spatial predictability that dense, container-based layouts need
+- **Marketing / content pages**: Use fluid sizing via `clamp(min, preferred, max)` for headings and display text. Keep body text fixed
 
 ### Fix Readability
 
-- Set comfortable text measure in the layout so paragraphs stay around 45-75 characters where practical
-- Adjust line-height per context using explicit `px` values in Paper: tighter for headings, looser for body
+- Set `max-width` on text containers using `ch` units (`max-width: 65ch`)
+- Adjust line-height per context: tighter for headings (1.1-1.2), looser for body (1.5-1.7)
 - Increase line-height slightly for light-on-dark text
-- Ensure body text is at least 16px
+- Ensure body text is at least 16px / 1rem
 
 ### Refine Details
 
 - Use `tabular-nums` for data tables and numbers that should align
-- Apply proper `letter-spacing` using `em`: slightly open for small caps and uppercase, default or tight for large display text
+- Apply proper `letter-spacing`: slightly open for small caps and uppercase, default or tight for large display text
 - Use semantic token names (`--text-body`, `--text-heading`), not value names (`--font-16`)
 - Set `font-kerning: normal` and consider OpenType features where appropriate
 
@@ -94,7 +92,7 @@ Build a clear type scale:
 
 - Define clear roles for each weight and stick to them
 - Don't use more than 3-4 weights (Regular, Medium, Semibold, Bold is plenty)
-- Use only the weights you actually need in the composition
+- Load only the weights you actually use (each weight adds to page load)
 
 **NEVER**:
 - Use more than 2-3 font families
@@ -102,7 +100,7 @@ Build a clear type scale:
 - Set body text below 16px
 - Use decorative/display fonts for body text
 - Disable browser zoom (`user-scalable=no`)
-- Use unsupported or unavailable font families / weights without checking `get_font_family_info` first
+- Use `px` for font sizes — use `rem` to respect user settings
 - Default to Inter/Roboto/Open Sans when personality matters
 - Pair fonts that are similar but not identical (two geometric sans-serifs)
 
@@ -112,7 +110,7 @@ Build a clear type scale:
 - **Readability**: Is body text comfortable to read in long passages?
 - **Consistency**: Are same-role elements styled identically throughout?
 - **Personality**: Does the typography reflect the brand?
-- **Availability**: Are the chosen font families and weights available in Paper and applied consistently?
+- **Performance**: Are web fonts loading efficiently without layout shift?
 - **Accessibility**: Does text meet WCAG contrast ratios? Is it zoomable to 200%?
 
 Remember: Typography is the foundation of interface design — it carries the majority of information. Getting it right is the highest-leverage improvement you can make.
